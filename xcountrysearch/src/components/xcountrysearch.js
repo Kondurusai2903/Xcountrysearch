@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./xcountrysearch.css";
-const Countrycard = ({ countryname, imgSrc, imgAlt }) => {
+const Countrycards = ({ countryname, imgSrc, imgAlt }) => {
   return (
     <>
       <div className="countryCard">
         <img src={imgSrc} alt={imgAlt} width="100px" height="100px" />
-        <h4>{countryname}</h4>
+        <h2 style={{ marginTop: ".5rem" }}>{countryname}</h2>
       </div>
     </>
   );
@@ -65,21 +65,19 @@ const Xcountrysearch = () => {
       >
         {flag
           ? filtersearch.map((val, ind) => (
-              <Countrycard
+              <Countrycards
                 countryname={val.name.common}
                 imgSrc={val.flags.png}
                 imgAlt={val.flags.alt}
                 key={ind}
-                className="countryCard"
               />
             ))
           : apidata.map((val, ind) => (
-              <Countrycard
+              <Countrycards
                 countryname={val.name.common}
                 imgSrc={val.flags.png}
                 imgAlt={val.flags.alt}
                 key={ind}
-                className="countryCard"
               />
             ))}
       </div>
