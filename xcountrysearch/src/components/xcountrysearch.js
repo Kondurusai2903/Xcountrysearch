@@ -67,16 +67,16 @@ const Xcountrysearch = () => {
           ? filtersearch.map((val, ind) => (
               <Countrycards
                 countryname={val.name.common}
-                imgSrc={val.flags.png}
-                imgAlt={val.flags.alt}
+                imgSrc={val.flags.svg}
+                imgAlt={val.flags.common}
                 key={ind}
               />
             ))
           : apidata.map((val, ind) => (
               <Countrycards
                 countryname={val.name.common}
-                imgSrc={val.flags.png}
-                imgAlt={val.flags.alt}
+                imgSrc={val.flags.svg}
+                imgAlt={val.flags.common}
                 key={ind}
               />
             ))}
