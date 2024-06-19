@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-const countryCard = ({ countryname, imgSrc, imgAlt }) => {
+import "./xcountrysearch.css";
+const Countrycard = ({ countryname, imgSrc, imgAlt }) => {
   return (
     <>
       <div
@@ -40,7 +41,7 @@ const Xcountrysearch = () => {
   const searchresult = (val) => {
     setInputvalue(val);
     let filteredData = apidata.filter((country) =>
-      country.name.common.toLowerCase().includes(val)
+      country.name.common.toLowerCase().includes(val.toLowerCase())
     );
     filteredData.sort();
     setFlag(true);
@@ -50,26 +51,31 @@ const Xcountrysearch = () => {
   useEffect(() => {
     res();
   }, []);
-  // console.log(apidata, "this is apidata");
+  console.log(apidata, "this is apidata");
   return (
     <div>
-      <center>
-        <input
-          type="text"
-          value={inputvalue}
-          onChange={(e) => searchresult(e.target.value)}
-          widht="600px"
-        />
-      </center>
+      <div class="container">
+        <center>
+          <input
+            type="text"
+            value={inputvalue}
+            onChange={(e) => searchresult(e.target.value)}
+            placeholder="Search for Countries"
+          />
+        </center>
+      </div>
+
       <div
         style={{
           display: "flex",
           flexWrap: "wrap",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
         {flag
           ? filtersearch.map((val, ind) => (
-              <countryCard
+              <Countrycard
                 countryname={val.name.common}
                 imgSrc={val.flags.png}
                 imgAlt={val.flags.alt}
@@ -77,7 +83,7 @@ const Xcountrysearch = () => {
               />
             ))
           : apidata.map((val, ind) => (
-              <countryCard
+              <Countrycard
                 countryname={val.name.common}
                 imgSrc={val.flags.png}
                 imgAlt={val.flags.alt}
