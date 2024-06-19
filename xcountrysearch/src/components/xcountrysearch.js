@@ -70,6 +70,7 @@ const Xcountrysearch = () => {
                 imgSrc={val.flags.png}
                 imgAlt={val.flags.alt}
                 key={ind}
+                className="countryCard"
               />
             ))
           : apidata.map((val, ind) => (
@@ -78,6 +79,7 @@ const Xcountrysearch = () => {
                 imgSrc={val.flags.png}
                 imgAlt={val.flags.alt}
                 key={ind}
+                className="countryCard"
               />
             ))}
       </div>
