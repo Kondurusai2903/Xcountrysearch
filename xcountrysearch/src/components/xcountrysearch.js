@@ -55,7 +55,7 @@ const Xcountrysearch = () => {
     <div>
       <center>
         <input
-          type="input"
+          type="search"
           value={inputvalue}
           onChange={(e) => searchresult(e.target.value)}
           widht="600px"
