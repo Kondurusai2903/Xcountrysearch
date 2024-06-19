@@ -25,6 +25,7 @@ const Xcountrysearch = () => {
   const [apidata, setApidata] = useState([]);
   const [inputvalue, setInputvalue] = useState("");
   const [filtersearch, setFiltersearch] = useState([]);
+  const [flag, setFlag] = useState(false);
   const API_CALL = "https://restcountries.com/v3.1/all";
   let res = async () => {
     try {
@@ -41,6 +42,8 @@ const Xcountrysearch = () => {
     let filteredData = apidata.filter((country) =>
       country.name.common.toLowerCase().includes(val)
     );
+    filteredData.sort();
+    setFlag(true);
     setFiltersearch(filteredData);
   };
 
@@ -64,7 +67,7 @@ const Xcountrysearch = () => {
           flexWrap: "wrap",
         }}
       >
-        {filtersearch
+        {flag
           ? filtersearch.map((val, ind) => (
               <Countrycard
                 countryname={val.name.common}
