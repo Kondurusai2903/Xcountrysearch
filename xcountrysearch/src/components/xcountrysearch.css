@@ -15,3 +15,14 @@
   margin: auto;
   padding: 5px;
 }
+.countryCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #eee;
+  margin: 0.5rem;
+  padding: 1rem;
+  width: 150px;
+  height: 150px;
+}

@@ -3,25 +3,14 @@ import "./xcountrysearch.css";
 const Countrycard = ({ countryname, imgSrc, imgAlt }) => {
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          height: "150px",
-          width: "150px",
-          border: "1px solid #eee",
-          margin: ".5rem",
-          padding: "1rem",
-        }}
-      >
+      <div className="countryCard">
         <img src={imgSrc} alt={imgAlt} width="100px" height="100px" />
         <h4>{countryname}</h4>
       </div>
     </>
   );
 };
+
 const Xcountrysearch = () => {
   const [apidata, setApidata] = useState([]);
   const [inputvalue, setInputvalue] = useState("");
@@ -52,6 +41,7 @@ const Xcountrysearch = () => {
     res();
   }, []);
   console.log(apidata, "this is apidata");
+
   return (
     <div>
       <div class="container">
