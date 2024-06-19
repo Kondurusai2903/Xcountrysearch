@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-const Countrycard = ({ countryname, imgSrc, imgAlt }) => {
+const countryCard = ({ countryname, imgSrc, imgAlt }) => {
   return (
     <>
       <div
@@ -55,7 +55,7 @@ const Xcountrysearch = () => {
     <div>
       <center>
         <input
-          type="search"
+          type="text"
           value={inputvalue}
           onChange={(e) => searchresult(e.target.value)}
           widht="600px"
@@ -69,7 +69,7 @@ const Xcountrysearch = () => {
       >
         {flag
           ? filtersearch.map((val, ind) => (
-              <Countrycard
+              <countryCard
                 countryname={val.name.common}
                 imgSrc={val.flags.png}
                 imgAlt={val.flags.alt}
@@ -77,7 +77,7 @@ const Xcountrysearch = () => {
               />
             ))
           : apidata.map((val, ind) => (
-              <Countrycard
+              <countryCard
                 countryname={val.name.common}
                 imgSrc={val.flags.png}
                 imgAlt={val.flags.alt}
