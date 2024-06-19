@@ -30,7 +30,7 @@ const Xcountrysearch = () => {
   const searchresult = (val) => {
     setInputvalue(val);
     let filteredData = apidata.filter((country) =>
-      country.name.common.includes(val)
+      country.name.common.toLowerCase().includes(val.toLowerCase())
     );
     filteredData.sort();
     setFlag(true);
